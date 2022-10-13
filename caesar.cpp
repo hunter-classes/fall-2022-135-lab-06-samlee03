@@ -2,11 +2,6 @@
 
 char shiftChar(char c, int rshift){
   char newChar = c;
-  //for (int i = 0; i < rshift; i++){
-  //newChar++;
-  //}
-  //Capitals
-  std::cout << c << std::endl;
   if (c >= 65 && c <= 90){
     int value = c - 65 + rshift;
     value = value % 26;
@@ -16,8 +11,6 @@ char shiftChar(char c, int rshift){
     value = value % 26;
     newChar = value + 97;
   }
-  
-  
   return newChar;
 }
 
@@ -26,6 +19,5 @@ std::string encryptCaesar(std::string plaintext, int rshift){
   for (int i = 0; i < plaintext.length(); i++){
     newString += shiftChar(plaintext[i], rshift);
   }
-  std::cout << newString << std::endl;
   return newString;
 }

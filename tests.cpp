@@ -7,10 +7,12 @@
 TEST_CASE("Caesar Cipher Shift Test"){
   CHECK(shiftChar('b', 5) == 'g');
   CHECK(shiftChar('A', 20) == 'U');
-  CHECK(shiftChar('G', 5) == 'L');
+  CHECK(shiftChar('W', 25) == 'V');
+  CHECK(shiftChar('Z', 60) == 'H');
 }
 
 TEST_CASE("Caesar Cipher Function Test"){
   CHECK(encryptCaesar("Way to Go!", 5) == "Bfd yt Lt!");
+  CHECK(encryptCaesar("This message works. Good!", 50) == "Rfgq kcqqyec umpiq. Emmb!");
 }
 
