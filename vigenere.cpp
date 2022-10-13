@@ -16,9 +16,12 @@ char shiftC(char c, int rshift){
 
 std::string encryptVigenere(std::string plaintext, std::string keyword){
   std::string encryptedStr = "";
+  int j = 0;
   for (int i = 0; i < plaintext.length(); i++){
-    static int j = 0;
-    encryptedStr += shiftC(plaintext[i], keyword[j] - 97);
+    
+    int rshift = keyword[j] - 97;
+    //std::cout << "current letter " << plaintext[i] << " rshift: " << rshift << std::endl;
+    encryptedStr += shiftC(plaintext[i], rshift);
     if ((plaintext[i] >= 65 && plaintext[i] <= 90) || (plaintext[i] <= 122 && plaintext[i] >= 97)){
       j++;
     }
@@ -26,6 +29,6 @@ std::string encryptVigenere(std::string plaintext, std::string keyword){
       j = 0;
     }
   }
-  std::cout << encryptedStr << std::endl;
+  // std::cout << encryptedStr << std::endl;
   return encryptedStr;
 }
